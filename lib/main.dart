@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:recoverfusion/registrou.dart' as register;
-import 'package:recoverfusion/recuperacioncontraseña.dart'; // Import the new page
+import 'package:recoverfusion/recuperacioncontraseña.dart';
+import 'package:recoverfusion/perfil.dart'; // Import the ProfilePage
 
 void main() {
   runApp(const MyApp());
@@ -79,7 +80,6 @@ class LoginPage extends StatelessWidget {
               // Register button
               ElevatedButton(
                 onPressed: () {
-                  // Register logic
                   Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => register.RegisterPage()));
@@ -98,9 +98,25 @@ class LoginPage extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => PasswordRecoveryPage())); // Navigate to PasswordRecoveryPage
+                      MaterialPageRoute(builder: (context) => PasswordRecoveryPage()));
                 },
                 child: Text('Recuperar contraseña'),
+              ),
+              SizedBox(height: 20),
+              // Go to Profile button
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => ProfilePage()));
+                },
+                style: ElevatedButton.styleFrom(
+                  minimumSize: Size(double.infinity, 50),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10.0),
+                  ),
+                ),
+                child: Text('Ir a Perfil'),
               ),
             ],
           ),
