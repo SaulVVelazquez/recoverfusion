@@ -1,26 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:recoverfusion/registrou.dart';
 
-void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: LoginPage(), // Set LoginPage as the home screen
-    );
-  }
-}
-
-class LoginPage extends StatelessWidget {
+class RegisterPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -49,6 +29,17 @@ class LoginPage extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 20),
+              // Text field for email
+              TextField(
+                decoration: InputDecoration(
+                  labelText: 'Email',
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10.0),
+                  ),
+                  prefixIcon: Icon(Icons.email),
+                ),
+              ),
+              SizedBox(height: 20),
               // Text field for password
               TextField(
                 decoration: InputDecoration(
@@ -61,27 +52,10 @@ class LoginPage extends StatelessWidget {
                 obscureText: true,
               ),
               SizedBox(height: 20),
-              // Login button
-              ElevatedButton(
-                onPressed: () {
-                  // Login logic
-                },
-                style: ElevatedButton.styleFrom(
-                  minimumSize: Size(double.infinity, 50),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10.0),
-                  ),
-                ),
-                child: Text('Iniciar sesión'),
-              ),
-              SizedBox(height: 20),
               // Register button
               ElevatedButton(
                 onPressed: () {
                   // Register logic
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => RegisterPage()));
                 },
                 style: ElevatedButton.styleFrom(
                   minimumSize: Size(double.infinity, 50),
@@ -90,6 +64,20 @@ class LoginPage extends StatelessWidget {
                   ),
                 ),
                 child: Text('Registrarse'),
+              ),
+              SizedBox(height: 20),
+              // Login button
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.pop(context); // Navigate back to the login page
+                },
+                style: ElevatedButton.styleFrom(
+                  minimumSize: Size(double.infinity, 50),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10.0),
+                  ),
+                ),
+                child: Text('Iniciar sesión'),
               ),
               SizedBox(height: 20),
               // Forgot password button
