@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:recoverfusion/registrou.dart';
+import 'package:recoverfusion/registrou.dart' as register;
+import 'package:recoverfusion/recuperacioncontraseña.dart'; // Import the new page
 
 void main() {
   runApp(const MyApp());
@@ -81,7 +82,7 @@ class LoginPage extends StatelessWidget {
                   // Register logic
                   Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => RegisterPage()));
+                      MaterialPageRoute(builder: (context) => register.RegisterPage()));
                 },
                 style: ElevatedButton.styleFrom(
                   minimumSize: Size(double.infinity, 50),
@@ -95,7 +96,9 @@ class LoginPage extends StatelessWidget {
               // Forgot password button
               TextButton(
                 onPressed: () {
-                  // Forgot password logic
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => PasswordRecoveryPage())); // Navigate to PasswordRecoveryPage
                 },
                 child: Text('Recuperar contraseña'),
               ),

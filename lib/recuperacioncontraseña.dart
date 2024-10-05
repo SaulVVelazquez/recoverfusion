@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:recoverfusion/recuperacioncontraseña.dart'; // Import the new page
+import 'package:recoverfusion/registrou.dart'; // Import the RegisterPage
 
-class RegisterPage extends StatelessWidget {
+class PasswordRecoveryPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,17 +19,6 @@ class RegisterPage extends StatelessWidget {
                   height: 100,
                 ),
               ),
-              // Text field for username
-              TextField(
-                decoration: InputDecoration(
-                  labelText: 'Username',
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10.0),
-                  ),
-                  prefixIcon: Icon(Icons.person),
-                ),
-              ),
-              SizedBox(height: 20),
               // Text field for email
               TextField(
                 decoration: InputDecoration(
@@ -41,22 +30,10 @@ class RegisterPage extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 20),
-              // Text field for password
-              TextField(
-                decoration: InputDecoration(
-                  labelText: 'Password',
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10.0),
-                  ),
-                  prefixIcon: Icon(Icons.lock),
-                ),
-                obscureText: true,
-              ),
-              SizedBox(height: 20),
-              // Register button
+              // Recover password button
               ElevatedButton(
                 onPressed: () {
-                  // Register logic
+                  // Password recovery logic
                 },
                 style: ElevatedButton.styleFrom(
                   minimumSize: Size(double.infinity, 50),
@@ -64,10 +41,10 @@ class RegisterPage extends StatelessWidget {
                     borderRadius: BorderRadius.circular(10.0),
                   ),
                 ),
-                child: Text('Registrarse'),
+                child: Text('Recuperar contraseña'),
               ),
               SizedBox(height: 20),
-              // Login button
+              // Back to login button
               ElevatedButton(
                 onPressed: () {
                   Navigator.pop(context); // Navigate back to the login page
@@ -81,14 +58,20 @@ class RegisterPage extends StatelessWidget {
                 child: Text('Iniciar sesión'),
               ),
               SizedBox(height: 20),
-              // Forgot password button
-              TextButton(
+              // Register button
+              ElevatedButton(
                 onPressed: () {
                   Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => PasswordRecoveryPage())); // Navigate to PasswordRecoveryPage
+                      MaterialPageRoute(builder: (context) => RegisterPage())); // Navigate to RegisterPage
                 },
-                child: Text('Recuperar contraseña'),
+                style: ElevatedButton.styleFrom(
+                  minimumSize: Size(double.infinity, 50),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10.0),
+                  ),
+                ),
+                child: Text('Registrarse'),
               ),
             ],
           ),
