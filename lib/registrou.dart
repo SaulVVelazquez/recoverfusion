@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:recoverfusion/recuperacioncontraseña.dart'; // Import the new page
 
 class RegisterPage extends StatelessWidget {
+  const RegisterPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -13,7 +15,7 @@ class RegisterPage extends StatelessWidget {
             children: <Widget>[
               // Space for the logo
               Container(
-                margin: EdgeInsets.only(bottom: 40),
+                margin: const EdgeInsets.only(bottom: 40),
                 child: Image.asset(
                   'assets/logo.png', // Ensure you have a logo at this path
                   height: 100,
@@ -26,10 +28,10 @@ class RegisterPage extends StatelessWidget {
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10.0),
                   ),
-                  prefixIcon: Icon(Icons.person),
+                  prefixIcon: const Icon(Icons.person),
                 ),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               // Text field for email
               TextField(
                 decoration: InputDecoration(
@@ -37,10 +39,10 @@ class RegisterPage extends StatelessWidget {
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10.0),
                   ),
-                  prefixIcon: Icon(Icons.email),
+                  prefixIcon: const Icon(Icons.email),
                 ),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               // Text field for password
               TextField(
                 decoration: InputDecoration(
@@ -48,47 +50,47 @@ class RegisterPage extends StatelessWidget {
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10.0),
                   ),
-                  prefixIcon: Icon(Icons.lock),
+                  prefixIcon: const Icon(Icons.lock),
                 ),
                 obscureText: true,
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               // Register button
               ElevatedButton(
                 onPressed: () {
                   // Register logic
                 },
                 style: ElevatedButton.styleFrom(
-                  minimumSize: Size(double.infinity, 50),
+                  minimumSize: const Size(double.infinity, 50),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10.0),
                   ),
                 ),
-                child: Text('Registrarse'),
+                child: const Text('Registrarse'),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               // Login button
               ElevatedButton(
                 onPressed: () {
                   Navigator.pop(context); // Navigate back to the login page
                 },
                 style: ElevatedButton.styleFrom(
-                  minimumSize: Size(double.infinity, 50),
+                  minimumSize: const Size(double.infinity, 50),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10.0),
                   ),
                 ),
-                child: Text('Iniciar sesión'),
+                child: const Text('Iniciar sesión'),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               // Forgot password button
               TextButton(
                 onPressed: () {
                   Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => PasswordRecoveryPage())); // Navigate to PasswordRecoveryPage
+                      MaterialPageRoute(builder: (context) => const PasswordRecoveryPage())); // Navigate to PasswordRecoveryPage
                 },
-                child: Text('Recuperar contraseña'),
+                child: const Text('Recuperar contraseña'),
               ),
             ],
           ),

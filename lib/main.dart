@@ -17,12 +17,14 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: LoginPage(), // Set LoginPage as the home screen
+      home: const LoginPage(), // Set LoginPage as the home screen
     );
   }
 }
 
 class LoginPage extends StatelessWidget {
+  const LoginPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,7 +36,7 @@ class LoginPage extends StatelessWidget {
             children: <Widget>[
               // Space for the logo
               Container(
-                margin: EdgeInsets.only(bottom: 40),
+                margin: const EdgeInsets.only(bottom: 40),
                 child: Image.asset(
                   'assets/logo.png', // Ensure you have a logo at this path
                   height: 100,
@@ -47,10 +49,10 @@ class LoginPage extends StatelessWidget {
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10.0),
                   ),
-                  prefixIcon: Icon(Icons.person),
+                  prefixIcon: const Icon(Icons.person),
                 ),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               // Text field for password
               TextField(
                 decoration: InputDecoration(
@@ -58,65 +60,65 @@ class LoginPage extends StatelessWidget {
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10.0),
                   ),
-                  prefixIcon: Icon(Icons.lock),
+                  prefixIcon: const Icon(Icons.lock),
                 ),
                 obscureText: true,
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               // Login button
               ElevatedButton(
                 onPressed: () {
                   // Login logic
                 },
                 style: ElevatedButton.styleFrom(
-                  minimumSize: Size(double.infinity, 50),
+                  minimumSize: const Size(double.infinity, 50),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10.0),
                   ),
                 ),
-                child: Text('Iniciar sesión'),
+                child: const Text('Iniciar sesión'),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               // Register button
               ElevatedButton(
                 onPressed: () {
                   Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => register.RegisterPage()));
+                      MaterialPageRoute(builder: (context) => const register.RegisterPage()));
                 },
                 style: ElevatedButton.styleFrom(
-                  minimumSize: Size(double.infinity, 50),
+                  minimumSize: const Size(double.infinity, 50),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10.0),
                   ),
                 ),
-                child: Text('Registrarse'),
+                child: const Text('Registrarse'),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               // Forgot password button
               TextButton(
                 onPressed: () {
                   Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => PasswordRecoveryPage()));
+                      MaterialPageRoute(builder: (context) => const PasswordRecoveryPage()));
                 },
-                child: Text('Recuperar contraseña'),
+                child: const Text('Recuperar contraseña'),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               // Go to Profile button
               ElevatedButton(
                 onPressed: () {
                   Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => ProfilePage()));
+                      MaterialPageRoute(builder: (context) => const ProfilePage()));
                 },
                 style: ElevatedButton.styleFrom(
-                  minimumSize: Size(double.infinity, 50),
+                  minimumSize: const Size(double.infinity, 50),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10.0),
                   ),
                 ),
-                child: Text('Ir a Perfil'),
+                child: const Text('Ir a Perfil'),
               ),
             ],
           ),
