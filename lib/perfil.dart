@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'qr_scanner_page.dart'; // Import the QRScannerPage
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
@@ -16,19 +15,19 @@ class ProfilePage extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              // Space for the profile picture
+              // Espacio para la foto de perfil
               const CircleAvatar(
                 radius: 50,
-                backgroundImage: AssetImage('assets/profile_picture.png'), // Ensure you have a profile picture at this path
+                backgroundImage: AssetImage('assets/profile_picture.png'), // Asegúrate de tener esta imagen
               ),
               const SizedBox(height: 20),
-              // User name
+              // Nombre de usuario
               const Text(
-                'Nombre de Usuario', // Add the user name here
+                'Nombre de Usuario', // Coloca aquí el nombre del usuario
                 style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
               ),
               const SizedBox(height: 20),
-              // Personal information section
+              // Sección de información personal
               const Card(
                 child: Padding(
                   padding: EdgeInsets.all(16.0),
@@ -37,35 +36,18 @@ class ProfilePage extends StatelessWidget {
                     children: <Widget>[
                       Text('Información Personal', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
                       SizedBox(height: 10),
-                      Text('Correo electrónico'), // Add email
-                      Text('Teléfono:'), // Add phone number
-                      // Add more personal information here
+                      Text('Correo electrónico'), // Coloca el correo aquí
+                      Text('Teléfono:'), // Coloca el teléfono aquí
+                      // Agrega más información personal si es necesario
                     ],
                   ),
                 ),
               ),
               const SizedBox(height: 20),
-              // QR Scanner button
+              // Botón de Rutinas
               ElevatedButton(
                 onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => const QRScannerPage()),
-                  );
-                },
-                style: ElevatedButton.styleFrom(
-                  minimumSize: const Size(double.infinity, 50),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10.0),
-                  ),
-                ),
-                child: const Text('Escanear QR'),
-              ),
-              const SizedBox(height: 20),
-              // Routines button
-              ElevatedButton(
-                onPressed: () {
-                  // Navigate to Routines page
+                  // Navegar a la página de Rutinas
                 },
                 style: ElevatedButton.styleFrom(
                   minimumSize: const Size(double.infinity, 50),
@@ -76,10 +58,10 @@ class ProfilePage extends StatelessWidget {
                 child: const Text('Rutinas'),
               ),
               const SizedBox(height: 20),
-              // Reports/Log button
+              // Botón de Reportes/Bitácora
               ElevatedButton(
                 onPressed: () {
-                  // Navigate to Reports/Log page
+                  // Navegar a la página de Reportes/Bitácora
                 },
                 style: ElevatedButton.styleFrom(
                   minimumSize: const Size(double.infinity, 50),
@@ -90,10 +72,10 @@ class ProfilePage extends StatelessWidget {
                 child: const Text('Reportes/Bitácora'),
               ),
               const SizedBox(height: 20),
-              // Appointments/Schedule button
+              // Botón de Citas/Horario
               ElevatedButton(
                 onPressed: () {
-                  // Navigate to Appointments/Schedule page
+                  // Navegar a la página de Citas/Horario
                 },
                 style: ElevatedButton.styleFrom(
                   minimumSize: const Size(double.infinity, 50),
@@ -104,10 +86,10 @@ class ProfilePage extends StatelessWidget {
                 child: const Text('Citas/Horario'),
               ),
               const SizedBox(height: 20),
-              // Logout button
+              // Botón de Cerrar sesión
               ElevatedButton(
                 onPressed: () {
-                  // Logout logic
+                  // Lógica para cerrar sesión
                 },
                 style: ElevatedButton.styleFrom(
                   minimumSize: const Size(double.infinity, 50),
